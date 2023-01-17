@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Sentiment Analysis</h1>
+    <h2>Indentitas</h2>
+    
+    <center>
+    <form action="/visual/" method="post">
+        {% csrf_token %}
+        <label for="fname">Query:</label><br>
+        <input type="text" id="query" name="query" required><br>
+        <label for="lname">Max Tweet:</label><br>
+        <input type="number" id="max" name="max" required><br><br>
+        <label for="lname">Date Start:</label><br>
+        <input type="date" id="dateStart" name="dateStart" required><br><br>
+        <label for="lname">Date End:</label><br>
+        <input type="date" id="dateEnd" name="dateEnd" required><br><br>
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </form>
+    </center> 
+{% endblock content %}

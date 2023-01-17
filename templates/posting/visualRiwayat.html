@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center><h1>{{query}}</h1></center>
+
+    <center>
+    <h2>Total Tweet = {{total}}</h2>
+    <h2>Positif = {{positive}}</h2>
+    <h2>negatif = {{negative}}</h2>
+    <h2>netral = {{netral}}</h2>
+    {%if chart%}
+        <img src="data:image/png;base64,{{chart}}" alt="">
+        <br>
+    {%endif%}
+    {% for t in all %}
+    <div class="card" style="width: 38rem;">
+        <h5 class="card-title">{{t.5}} / {{t.3}}</h5>
+        <p class="card-text">{{t.2}}</p>
+    </div>
+    <br>
+    {% endfor %}
+</center>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Halaman Riwayat</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col">Topic</th>
+            <th scope="col">Date Start</th>
+            <th scope="col">Date End</th>
+            <th scope="col">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for t in topics %}
+        <tr>
+            <!-- <th scope="row">1</th> -->
+            <td>{{t.1}}</td>
+            <td>{{t.2}}</td>
+            <td>{{t.3}}</td>
+            <td><a href="{% url 'visualRiwayat' param=t.0%}"> lihat</a> | <a href="{% url 'remove' param=t.0%}" onclick="return confirm('Are you sure?')">hapus</a></td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+
+{% endblock content %}
